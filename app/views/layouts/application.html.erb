@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fitsapp Test</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="hmenu">
+            <%= current_user.email if current_user %>
+            <%= link_to "Home", root_path %>
+            <%= render 'devise/menu/registration' %>
+            <%= render 'devise/menu/login_logout' %>
+            <%= link_to "Admin Dashboard", rails_admin_path if current_user.try(:admin?) %>
+          </ul>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

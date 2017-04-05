@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Chatting with: <%= @conversation.recipient.email %></h2>
+  </br>
+
+  <% @messages.each do |message| %>
+    <div class="form-group col-md-5 col-md-offset-2">
+      <% if message.body %>
+        <% user = User.find(message.user_id) %>
+        <b><%= user.email %></b>
+        <i>
+          <%= "at " + message.message_time %>
+          <%= "said: " %>
+        </i>
+        <%= message.body %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= render partial: 'form' %>
+</div>

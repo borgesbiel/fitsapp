@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>My Chat List</h2>
+
+  <p>
+    <%= link_to 'New chat', new_conversation_path, class: 'btn btn-primary' %>
+  </p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Recipient</th>
+        <th>Recipient Type</th>
+        <th>Last message </th>
+        <th>Status </th>
+        <th>Chat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'conversations' %>
+    </tbody>
+  </table>
+</div>
