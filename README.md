@@ -1,6 +1,18 @@
 # README - FITSAPP Ruby on Rails Test
 
-Stack used in this project:
+## Features covered
+
+- Three kind of users: users, trainers (created with Single Table Inheritance) and admin (just a boolean type in user model).
+- Each of these has the ability to log into the website through authentication (devise).
+- Once signed in, they can see the front page Chat List with already opened chats and button New chat.
+- Clicking on open you see all the messages in which the logged client is involved.
+- Then, you can click over ‘New chat’ and you are given a form to send a new message.
+- In the form you have to select the receiver (either a user or a trainer).
+- Editing and deleting messages isn’t allowed by users or trainers.
+- Data management work is done by the admin via rails_admin dashboard. (cancancan + rails_admin).
+- bonus: messages have status read or non read untill they are opened by the recipient
+
+## Stack used in this project:
 
 * Backend: Ruby 2.3.0, Rails 5.0.2
 
@@ -29,18 +41,6 @@ Grab the latest code version from GitHub:
 When you run the command above (rails db:seed) will invoke the creation of one Admin, two Users, two Trainers and two Conversations
 
 ## Sample workflow to cover the app features
-
-## Features covered
-
-- Three kind of users: users, trainers (created with Single Table Inheritance) and admin (just a boolean type in user model).
-- Each of these has the ability to log into the website through authentication (devise).
-- Once signed in, they can see the front page Chat List with already opened chats and button New chat.
-- Clicking on open you see all the messages in which the logged client is involved.
-- Then, you can click over ‘New chat’ and you are given a form to send a new message.
-- In the form you have to select the receiver (either a user or a trainer).
-- Editing and deleting messages isn’t allowed by users or trainers.
-- Data management work is done by the admin via rails_admin dashboard. (cancancan + rails_admin).
-- bonus: messages have status read or non read untill they are opened by the recipient
 
 ### Login and reply new message
 
