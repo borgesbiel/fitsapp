@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :conversations, foreign_key: :sender_id
 
   TYPES = %w(User Trainer).freeze
+
+  scope :not_admin, -> { where(admin: false) }
 end

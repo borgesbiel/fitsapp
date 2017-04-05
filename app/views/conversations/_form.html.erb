@@ -1,4 +1,4 @@
-<% User.all.each do |recipient| %>
+<% User.not_admin.each do |recipient| %>
   <% conversation = Conversation.between(current_user.id, recipient.id).present? %>
   <% unless conversation.present? %>
     <% if recipient.id != current_user.id %>
