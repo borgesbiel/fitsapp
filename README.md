@@ -40,6 +40,10 @@ Grab the latest code version from GitHub:
 
 When you run the command above (rails db:seed) will invoke the creation of one Admin, two Users, two Trainers and two Conversations
 
+## Run it
+
+> rails s
+
 ## Sample workflow to cover the app features
 
 ### Login and reply new message
